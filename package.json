@@ -39,7 +39,7 @@
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-connect": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-htmlmin": "^4.0.0",
+    "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-imagemin": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-usemin": "^5.0.0",
