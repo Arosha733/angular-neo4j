@@ -29,7 +29,7 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "grunt": "^1.5.0",
+    "grunt": "^0.4.0",                                // Downgraded to resolve dependency conflict
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-coffee": "^0.7.0",
