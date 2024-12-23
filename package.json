@@ -1,4 +1,4 @@
-{
+\{
   "name": "angular-neo4j",
   "version": "0.1.1",
   "private": true,
@@ -29,13 +29,13 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "grunt": "^1.6.1",                               
+    "grunt": "~0.4.5", 
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-coffee": "^0.7.0",
+    "grunt-contrib-coffee": "^0.7.0", 
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-compass": "^1.0.0",
-    "grunt-contrib-jshint": "^2.1.0",                 
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-connect": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
