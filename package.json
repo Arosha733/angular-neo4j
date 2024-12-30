@@ -7,7 +7,8 @@
   "description": "A REST enabled express server",
   "scripts": {
     "start": "node server/index.js",
-    "test": "make test"
+    "test": "make test",
+    "dev": "nodemon server/index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -18,7 +19,7 @@
     "winston-loggly": "^3.0.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0",  // Updated OAuth package
     "passport-facebook": "^3.0.0",
     "bcrypt": "^5.0.1",
     "nodemailer": "^6.9.1",
@@ -29,10 +30,10 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.5", 
+    "grunt": "~1.5.0",  // Updated to the latest stable version
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-coffee": "^0.7.0", 
+    "grunt-contrib-coffee": "^0.7.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-compass": "^1.0.0",
     "grunt-contrib-jshint": "^2.1.0",
