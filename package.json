@@ -19,7 +19,7 @@
     "winston-loggly": "^3.0.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "passport-google-oauth20": "^2.0.0",  // Updated OAuth package
+    "passport-google-oauth20": "^2.0.0",
     "passport-facebook": "^3.0.0",
     "bcrypt": "^5.0.1",
     "nodemailer": "^6.9.1",
@@ -30,7 +30,7 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "grunt": "~1.5.0",  // Updated to the latest stable version
+    "grunt": "~1.5.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-coffee": "^0.7.0",
