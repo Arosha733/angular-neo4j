@@ -4,7 +4,7 @@ FROM node:16
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json (and optionally package-lock.json, if it's present)
 COPY package.json ./
 
 # Install dependencies
