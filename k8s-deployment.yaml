@@ -72,10 +72,13 @@ spec:
   selector:
     app: backend
   ports:
-  - protocol: TCP
+  - name: http  
+    protocol: TCP
     port: 7474
     targetPort: 7474
-  - protocol: TCP
+  - name: bolt  
+    protocol: TCP
     port: 7687
     targetPort: 7687
   type: LoadBalancer
+
