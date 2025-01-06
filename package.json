@@ -7,7 +7,7 @@
   "description": "A REST enabled express server",
   "scripts": {
     "start": "node server/index.js",
-    "test": "make test",
+    "test": "command1 && command2" ,
     "dev": "nodemon server/index.js"
   },
   "dependencies": {
