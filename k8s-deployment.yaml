@@ -1,82 +1,81 @@
 ---
-    apiVersion: apps/v1
-    kind: Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
     metadata:
-      name: frontend-deployment
       labels:
         app: frontend
     spec:
-      replicas: 2
-      selector:
-        matchLabels:
-          app: frontend
-      template:
-        metadata:
-          labels:
-            app: frontend
-        spec:
-          containers:
-            - name: frontend
-              image: aroosha733/frontend:v1.0  # Replace with your Docker image
-              ports:
-                - containerPort: 80
-          imagePullSecrets:
-            - name: my-registry-secret  # Name of your Docker registry secret
-    
-    ---
-    apiVersion: apps/v1
-    kind: Deployment
+      containers:
+      - name: frontend
+        image: aroosha733/frontend:v1.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: my-registry-secret
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
     metadata:
-      name: backend-deployment
       labels:
         app: backend
     spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: backend
-      template:
-        metadata:
-          labels:
-            app: backend
-        spec:
-          containers:
-            - name: backend
-              image: aroosha733/backend:v1.0  # Replace with your Docker image
-              ports:
-                - containerPort: 7474
-                - containerPort: 7687
-          imagePullSecrets:
-            - name: my-registry-secret  # Name of your Docker registry secret
-    
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: frontend-service
-    spec:
-      selector:
-        app: frontend
-      ports:
-        - protocol: TCP
-          port: 80
-          targetPort: 80
-      type: LoadBalancer
-    
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: backend-service
-    spec:
-      selector:
-        app: backend
-      ports:
-        - protocol: TCP
-          port: 7474
-          targetPort: 7474
-        - protocol: TCP
-          port: 7687
-          targetPort: 7687
-      type: LoadBalancer
-    
+      containers:
+      - name: backend
+        image: aroosha733/backend:v1.0
+        ports:
+        - containerPort: 7474
+        - containerPort: 7687
+      imagePullSecrets:
+      - name: my-registry-secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+  - protocol: TCP
+    port: 7474
+    targetPort: 7474
+  - protocol: TCP
+    port: 7687
+    targetPort: 7687
+  type: LoadBalancer
